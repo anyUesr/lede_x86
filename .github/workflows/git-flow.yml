@@ -52,6 +52,8 @@ jobs:
         if: env.SSH_ACTIONS == 'true'
 
       - name: make download
+        run: |
+          cd lede
           make download -j32
           find dl -size -1024c -exec rm -f {} \;
           
